@@ -9,27 +9,28 @@ namespace HelloWorld
 
 
         static void Main(string[] args)
-        {
 
-            Console.WriteLine(Divide(25,12));
+        {
+            Console.WriteLine(Calculate());
             Console.Read();
         }
 
-        public static int Add(int num1, int num2)
+        public static int Calculate()
         {
-            return num1 + num2;
-        }
 
-        public static int Multiply(int num1, int num2)
-        {
-            return num1 * num2;
-        }
+            Console.WriteLine("Please enter num1");
+            string num1Input = Console.ReadLine();
 
-        public static double Divide(double num1, double num2)
-        {
-            return num1 / num2;
-        }
+            Console.WriteLine("Please enter num2");
+            string num2Input = Console.ReadLine();
 
+            int num1 = int.Parse(num1Input);
+            int num2 = int.Parse(num2Input);
+
+
+            int result = num1 + num2;
+            return result;
+        }
    
     }
 }
