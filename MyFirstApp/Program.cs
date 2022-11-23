@@ -5,43 +5,28 @@ namespace HellWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Whats the temperature like?");
-            string userInput = Console.ReadLine();
+            bool isAdmin = false;
+            bool isRegistered = true;
 
-            //int temperature = int.Parse(userInput);
+            string userName = "";
 
-            int temperature;
-
-            int number;
-
-            bool userEnteredANumber = int.TryParse(userInput, out number);
-
-            if (userEnteredANumber)
+            Console.WriteLine("Please enter your username.");
+            userName = Console.ReadLine();
+            if (isRegistered && userName != "" && userName.Equals("admin"))
             {
-                temperature = number;
-            }
-            else
-            {
-                temperature = 0;
-                Console.WriteLine("Value entered, was no number. 0 set at temperature");
+                Console.WriteLine("Hi There, registered user");
+
+
+                Console.WriteLine("Hi There, {0}!", userName);
+
+                Console.WriteLine("Hi, there admins!");
+
+
             }
 
-            if (temperature < 10)
+            if (isAdmin || isRegistered)
             {
-                Console.WriteLine("Take the coat");
-            }
-
-            else if (temperature == 10)
-            {
-                Console.WriteLine("It's 10 degree C outside.");
-            }
-            else if (temperature > 10 && temperature < 30)
-            {
-                Console.WriteLine("Cozy warm!");
-            }
-            else
-            {
-                Console.WriteLine("It's a day for shorts.");
+                Console.WriteLine("You are logged in");
             }
 
             Console.Read();
