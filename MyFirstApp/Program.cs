@@ -1,24 +1,29 @@
 ﻿
 public class MyFirstApp
 {
-    static float vat = 13f;
+    
 
     public static void Main()
     {
-        float productA = 3.99f;
-        float productB = 11.88f;
-        float productC = 4.74f;
+        //Your task: Create a program that swaps two variables
 
-        float summed = productA + productB + productC;
-        float totalTax = (summed / 100) * vat;
-        summed += totalTax;
-        Console.WriteLine("Total Price is: " + summed);
+        int number1 = 12;
+        int number2 = 8;
+
+        int temp1 = 0;
+        int temp2 = 0;
+
+        temp1 = number1;
+        temp2 = number2;
+
+        number1 = temp2;
+        number2 = temp1;
+
+        Console.WriteLine("first number is now: " + number1);
+        Console.WriteLine("second number is now: " + number2);
+
     }
 
-    public static void Calculate()
-    {
-        Console.WriteLine("Vat is " + vat);
-    }
 }
 
 
