@@ -5,46 +5,20 @@ namespace HellWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Whats the temperature like?");
-            string userInput = Console.ReadLine();
+            int temperature = -5;
+            string stateOfMatter;
 
-            //int temperature = int.Parse(userInput);
+            temperature += 10;
 
-            int temperature;
+            //stateOfMatter = temperature < 0 ? "solid" : "liquid";
 
-            int number;
 
-            bool userEnteredANumber = int.TryParse(userInput, out number);
+            //Challenge - add the gas stae of matter to the options
 
-            if (userEnteredANumber)
-            {
-                temperature = number;
-            }
-            else
-            {
-                temperature = 0;
-                Console.WriteLine("Value entered, was no number. 0 set at temperature");
-            }
+            stateOfMatter = temperature > 100 ? "gas" : temperature < 0 ? "solid" : "liquid";
 
-            if (temperature < 10)
-            {
-                Console.WriteLine("Take the coat");
-            }
-
-            else if (temperature == 10)
-            {
-                Console.WriteLine("It's 10 degree C outside.");
-            }
-            else if (temperature > 10 && temperature < 30)
-            {
-                Console.WriteLine("Cozy warm!");
-            }
-            else
-            {
-                Console.WriteLine("It's a day for shorts.");
-            }
-
-            Console.Read();
+                Console.WriteLine("State of Matter is {0}", stateOfMatter);
+            Console.ReadKey();
         }
     }
 }
