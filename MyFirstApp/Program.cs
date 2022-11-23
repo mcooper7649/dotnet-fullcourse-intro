@@ -5,38 +5,20 @@ namespace HellWorld
     {
         static void Main(string[] args)
         {
-            int age = 18;
+            int temperature = -5;
+            string stateOfMatter;
 
-            switch (age)
-            {
-                case 15:
-                    Console.WriteLine("Too young to party in the club!");
-                    break;
-                case 18:
-                    Console.WriteLine("Old enough to party");
-                    break;
-                default:
-                    Console.WriteLine("How old are you then?");
-                    break;
-            }
+            temperature += 10;
 
-            Console.Read();
+            //stateOfMatter = temperature < 0 ? "solid" : "liquid";
 
-            if (age == 14)
-            {
-                Console.WriteLine("Too young to party in the club!");
-            }
-        else if (age == 18){
-                Console.WriteLine("old enough to party!");
 
-            }
-        else
-            {
-                Console.WriteLine("How old are you?");
-            }
+            //Challenge - add the gas stae of matter to the options
 
-            Console.Read();
+            stateOfMatter = temperature > 100 ? "gas" : temperature < 0 ? "solid" : "liquid";
 
+                Console.WriteLine("State of Matter is {0}", stateOfMatter);
+            Console.ReadKey();
         }
     }
 }
