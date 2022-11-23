@@ -1,32 +1,44 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HelloWorld
-
-
+namespace TryAndCatch
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
-            WriteSomething();
-            WriteSomethingSpecific("Hello Michael");
-            Console.Read();
+            Console.WriteLine("Please Enter a number!");
+            string userInput = Console.ReadLine();
 
-        }
+            try
+            {
+                int userInputAsInt = int.Parse(userInput);
 
-        //access modifier (static) return type method name (parameter1, parameter2)
+            }
+            catch (FormatException)
+            {
+                throw;
+                //Console.WriteLine("Format Exception, please enter the correct type next time.");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Overflow Exception");
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Null Arg Exception");
+            }finally
+            {
+                Console.WriteLine("This is called with error or success at the end");
+            }
 
-        public static void WriteSomething()
-        {
-            Console.WriteLine("I am called from a method");
-        }
-
-        public static void WriteSomethingSpecific(string myText)
-        {
-            Console.WriteLine(myText);
+            Console.ReadKey();
         }
     }
 }
+
+
 
