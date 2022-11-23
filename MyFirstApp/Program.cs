@@ -93,6 +93,13 @@ namespace OperatorsC
 
             Console.WriteLine("result of isLower && isSunny {0}", isLowerAndSunny);
 
+
+
+            //OR operators
+
+            isLowerAndSunny = isLower || isSunny;
+            Console.WriteLine("Result of isLower || isSunny is{0}", isLowerAndSunny);
+
             Console.ReadKey();
 
 
