@@ -1,24 +1,27 @@
 ﻿using System;
-namespace HellWorld
+namespace HelloWorld
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int temperature = -5;
-            string stateOfMatter;
 
-            temperature += 10;
+            //Regular For Loop
+            //for(int counter = 0; counter < 40; counter+=4)
+            // {
+            //     Console.WriteLine(counter + " is lower than 40");
+            // }
 
-            //stateOfMatter = temperature < 0 ? "solid" : "liquid";
 
+            //Challenge - CountOut only Odd Numbers from 0 -20;
+            for (int counter = 1; counter < 20; counter+=2)
+            {
+                
+                Console.WriteLine(counter + " is an Odd number.");
+            }
 
-            //Challenge - add the gas stae of matter to the options
-
-            stateOfMatter = temperature > 100 ? "gas" : temperature < 0 ? "solid" : "liquid";
-
-                Console.WriteLine("State of Matter is {0}", stateOfMatter);
-            Console.ReadKey();
+            Console.WriteLine("For loop is done");
+            Console.Read();
         }
     }
 }
