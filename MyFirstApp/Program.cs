@@ -1,5 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, Michael!");
-Console.WriteLine("Hello, Lourdes!");
+﻿
+public class MyFirstApp
+{
+    public static void Main()
+    {
+        int a = 1;
+        int b = 2;
+        int c = a + b;
+
+        Console.WriteLine("Result is: " + c);
+    }
+}
+
 
 
