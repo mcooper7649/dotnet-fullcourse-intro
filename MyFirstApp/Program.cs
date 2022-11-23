@@ -1,5 +1,5 @@
 ﻿using System;
- namespace HellWorld
+namespace HellWorld
 {
     class Program
     {
@@ -8,20 +8,32 @@
             Console.WriteLine("Whats the temperature like?");
             string userInput = Console.ReadLine();
 
+            //int temperature = int.Parse(userInput);
 
+            int temperature;
 
-            int temperature = int.Parse(userInput);
+            int number;
 
-            if(temperature < 10)
+            if (int.TryParse(userInput, out number))
+            {
+                temperature = number;
+            }
+            else
+            {
+                temperature = 0;
+                Console.WriteLine("Value entered, was no number. 0 set at temperature");
+            }
+
+            if (temperature < 10)
             {
                 Console.WriteLine("Take the coat");
             }
 
-            if (temperature == 10)
+            else if (temperature == 10)
             {
                 Console.WriteLine("It's 10 degree C outside.");
             }
-            if (temperature > 10 && temperature < 30)
+            else if (temperature > 10 && temperature < 30)
             {
                 Console.WriteLine("Cozy warm!");
             }
