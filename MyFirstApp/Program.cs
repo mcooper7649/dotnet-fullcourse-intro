@@ -14,7 +14,9 @@ namespace HellWorld
 
             int number;
 
-            if (int.TryParse(userInput, out number))
+            bool userEnteredANumber = int.TryParse(userInput, out number);
+
+            if (userEnteredANumber)
             {
                 temperature = number;
             }
