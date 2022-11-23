@@ -1,29 +1,32 @@
-﻿
-public class MyFirstApp
+﻿using System;
+
+namespace HelloWorld
+
+
 {
-    
-
-    public static void Main()
+    class Program
     {
-        //Your task: Create a program that swaps two variables
 
-        int number1 = 12;
-        int number2 = 8;
 
-        int temp1 = 0;
-        int temp2 = 0;
+        static void Main(string[] args)
+        {
+            WriteSomething();
+            WriteSomethingSpecific("Hello Michael");
+            Console.Read();
 
-        temp1 = number1;
-        temp2 = number2;
+        }
 
-        number1 = temp2;
-        number2 = temp1;
+        //access modifier (static) return type method name (parameter1, parameter2)
 
-        Console.WriteLine("first number is now: " + number1);
-        Console.WriteLine("second number is now: " + number2);
+        public static void WriteSomething()
+        {
+            Console.WriteLine("I am called from a method");
+        }
 
+        public static void WriteSomethingSpecific(string myText)
+        {
+            Console.WriteLine(myText);
+        }
     }
-
 }
-
 
