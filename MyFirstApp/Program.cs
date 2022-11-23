@@ -1,15 +1,24 @@
 ﻿
 public class MyFirstApp
 {
+    static float vat = 13f;
+
     public static void Main()
     {
-        int a = 1;
-        int b = 2;
-        int c = a + b;
+        float productA = 3.99f;
+        float productB = 11.88f;
+        float productC = 4.74f;
 
-        Console.WriteLine("Result is: " + c);
+        float summed = productA + productB + productC;
+        float totalTax = (summed / 100) * vat;
+        summed += totalTax;
+        Console.WriteLine("Total Price is: " + summed);
+    }
+
+    public static void Calculate()
+    {
+        Console.WriteLine("Vat is " + vat);
     }
 }
-
 
 
