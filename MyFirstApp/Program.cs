@@ -7,12 +7,10 @@ namespace Classes__Basics
         {
             //Create an object of my class
             //an  instance of human
-            Human denis = new Human();
-            denis.firstName = "Denis";
-            denis.lastName = "Test";
+            Human denis = new Human("Denis", "Test", "brown", 33);
             denis.IntroduceMyself();
 
-            Human Michael = new Human();
+            Human Michael = new Human("Michael", "Cooper", "hazel", 38);
             Michael.IntroduceMyself();
         }
     }
