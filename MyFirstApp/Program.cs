@@ -1,31 +1,21 @@
 ﻿using System;
-namespace Classes__Basics
+namespace Properties
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Create an object of my class
-            //an  instance of human
-            Human denis = new Human("Denis", "Test", "brown", 33);
-            denis.IntroduceMyself();
+            Box box = new Box();
+            box.SetLength(-3);
 
-            Human Michael = new Human("Michael", "Cooper", 38);
-            Michael.IntroduceMyself();
-
-            Human basicHuman = new Human();
-            basicHuman.IntroduceMyself();
+            box.height = 4;
+            box.width = 5;
+            Console.WriteLine("box's volume is " + box.GetVolume());
 
 
-            Human humanNoAge = new Human("Luli");
-            humanNoAge.IntroduceMyself();
 
-            Human humanFirstLast = new Human("Alli", "Cooper");
-            humanFirstLast.IntroduceMyself();
-
-            Human humanFirstOnly = new Human("Legend", "Cooper", 3);
-            humanFirstOnly.IntroduceMyself();
-
+            box.DisplayInfo();
         }
+
     }
 }
