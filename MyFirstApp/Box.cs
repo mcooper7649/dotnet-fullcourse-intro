@@ -4,10 +4,60 @@ namespace Properties
     class Box
     {
         //Member Variables 
-        private int length;
-        public int height;
-        public int width;
-        public int volume;
+        private int length = 3;
+        private int height;
+        private int width;
+        private int volume;
+
+        //public int Width { get; set; }
+
+        // Same as above, above is shorthand
+        public int Width
+        {
+            get
+            {
+                return this.width;
+            }
+            set
+            {
+                this.width = value;
+            }
+        }
+
+        public int Volume
+        {
+            get
+            {
+                return this.length * this.height * this.width;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                return height;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    height = -value;
+                }
+                else
+                {
+                    height = value;
+
+                }
+            }
+        }
+
+        public Box(int length, int height, int width)
+        {
+            this.length = length;
+            this.height = height;
+            Width = width;
+        }
 
         public void SetLength(int length)
         {
@@ -23,10 +73,7 @@ namespace Properties
             return this.length;
         }
 
-        public int GetVolume()
-        {
-            return this.length * this.height * this.width;
-        }
+
 
         public void DisplayInfo()
         {
