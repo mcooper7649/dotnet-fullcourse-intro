@@ -5,29 +5,38 @@ namespace Members
     {
         static void Main(string[] args)
         {
-            int[] grades = new int[5];
-            grades[0] = 20;
-            grades[1] = 15;
-            grades[2] = 10;
-            grades[3] = 15;
-            grades[4] = 17;
-
-            Console.WriteLine("grades at index 0 : {0}", grades[0]);
+            //int[] nums = new int[10];
 
 
-            string input = Console.ReadLine();
-            // Assign value to array grades at index 0;
-            grades[0] = int.Parse(input);
-            Console.WriteLine("grades at index 0 : {0}", grades[0]);
 
-            //Another way to initialize
-            int[] gradesOfMathStudentsA = { 20, 13, 12, 8, 8 };
+            //for(int i = 0; i <10; i++)
+            //{
+            //    nums[i] = i + 10;
+            //}
 
-            //Third way of initializing an array
-            int[] gradesOfMathStudentB = new int[] { 20, 13, 12, 8, 6 };
+            //for (int j = 0; j < nums.Length; j++)
+            //{
+            //    Console.WriteLine("Element{0} = {1}", j, nums[j]);
+            //}
+
+            //int counter = 0;
+            //foreach(int k in nums)
+            //{
+            //    Console.WriteLine("Element{0} = {1}", counter, k);
+            //    counter++;
+            //}
 
 
-            Console.WriteLine("length of gradesOfMathStudentA: {0}", gradesOfMathStudentsA.Length);
+            string[] friends = new string [] { "Mike", "Alli", "Luli", "Nik", "Legend" };
+            foreach(string z in friends)
+            {
+                Console.WriteLine("Welcome to the party {0}", z);
+        
+            }
+
+
+
+
             Console.ReadKey();
 
         }
