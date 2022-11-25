@@ -1,17 +1,14 @@
 ﻿using System;
-namespace Classes__Basics
+namespace Members
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Create an object of my class
-            //an  instance of human
-            Human denis = new Human("Denis", "Test", "brown", 33);
-            denis.IntroduceMyself();
-
-            Human Michael = new Human("Michael", "Cooper", "hazel", 38);
-            Michael.IntroduceMyself();
+            Members member1 = new Members();
+            member1.Introducing(true);
         }
+
     }
+
 }
