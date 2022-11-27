@@ -1,67 +1,36 @@
 ﻿using System;
-namespace Arrays
+namespace _2DArrays
 {
     class Program
     {
+
+        static int[,] matrix =
+           {
+                   { 1, 2, 3 },
+                   { 4, 5, 6 },
+                   { 7, 8, 9 }
+            };
+
+
         static void Main(string[] args)
         {
-            //Declare 2d array
-            string[,] matrix;
-
-            //Decalry 3d array
-            int[,,] threeD;
-
-            //two dimensional array
-            int[,] array2d = new int[,]
+            foreach (int item in matrix)
             {
-                {
-                    1,2,3
-                },
-                {
-                    4,5,6
-                },
-                {
-                    7,8,9
-                },
+                Console.Write(item + " ");
+            }
 
+            Console.WriteLine("\nThis is our 2D array printed using nesxted for loop");
 
-            };
-            Console.WriteLine("Central value is {0}", array2d[2, 0]);
-
-
-            string[,,] array3D = new string[,,]
+            //outer for loop
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
+                //inner for loop
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    {"000", "001"},
-                    {"010", "011"},
-                    {"Hi There", "What's Up"}
-                },
-                {
-                    {"100", "101"},
-                    {"110", "111" },
-                    {"I'm Good", "and u?" }
+                    Console.Write(matrix[i,j] + " ");
                 }
-            };
-
-            string[,] array2dString = new string[3, 2]
-            {
-                {"one", "two" },
-                {"three", "four" },
-                {"five", "six" }
-            };
-
-            array2dString[1, 1] = "Chicken";
-
-            int dimensions = array2d.Rank;
-
-            int[,] array2d2 = { { 1, 2 } ,  { 3 , 4 } };
-
-
-
-            Console.WriteLine("The value is {0}", dimensions);
-            Console.ReadKey();
+            }
         }
-
     }
 
 }
