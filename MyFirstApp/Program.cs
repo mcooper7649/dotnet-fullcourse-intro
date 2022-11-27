@@ -1,35 +1,65 @@
 ﻿using System;
-namespace Members
+namespace Arrays
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] grades = new int[5];
-            grades[0] = 20;
-            grades[1] = 15;
-            grades[2] = 10;
-            grades[3] = 15;
-            grades[4] = 17;
+            //Declare 2d array
+            string[,] matrix;
 
-            Console.WriteLine("grades at index 0 : {0}", grades[0]);
+            //Decalry 3d array
+            int[,,] threeD;
 
-
-            string input = Console.ReadLine();
-            // Assign value to array grades at index 0;
-            grades[0] = int.Parse(input);
-            Console.WriteLine("grades at index 0 : {0}", grades[0]);
-
-            //Another way to initialize
-            int[] gradesOfMathStudentsA = { 20, 13, 12, 8, 8 };
-
-            //Third way of initializing an array
-            int[] gradesOfMathStudentB = new int[] { 20, 13, 12, 8, 6 };
+            //two dimensional array
+            int[,] array2d = new int[,]
+            {
+                {
+                    1,2,3
+                },
+                {
+                    4,5,6
+                },
+                {
+                    7,8,9
+                },
 
 
-            Console.WriteLine("length of gradesOfMathStudentA: {0}", gradesOfMathStudentsA.Length);
+            };
+            Console.WriteLine("Central value is {0}", array2d[2, 0]);
+
+
+            string[,,] array3D = new string[,,]
+            {
+                {
+                    {"000", "001"},
+                    {"010", "011"},
+                    {"Hi There", "What's Up"}
+                },
+                {
+                    {"100", "101"},
+                    {"110", "111" },
+                    {"I'm Good", "and u?" }
+                }
+            };
+
+            string[,] array2dString = new string[3, 2]
+            {
+                {"one", "two" },
+                {"three", "four" },
+                {"five", "six" }
+            };
+
+            array2dString[1, 1] = "Chicken";
+
+            int dimensions = array2d.Rank;
+
+            int[,] array2d2 = { { 1, 2 } ,  { 3 , 4 } };
+
+
+
+            Console.WriteLine("The value is {0}", dimensions);
             Console.ReadKey();
-
         }
 
     }
