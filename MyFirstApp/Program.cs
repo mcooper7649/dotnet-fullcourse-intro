@@ -1,44 +1,65 @@
 ﻿using System;
-namespace Members
+namespace Arrays
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //int[] nums = new int[10];
+            //Declare 2d array
+            string[,] matrix;
 
+            //Decalry 3d array
+            int[,,] threeD;
 
-
-            //for(int i = 0; i <10; i++)
-            //{
-            //    nums[i] = i + 10;
-            //}
-
-            //for (int j = 0; j < nums.Length; j++)
-            //{
-            //    Console.WriteLine("Element{0} = {1}", j, nums[j]);
-            //}
-
-            //int counter = 0;
-            //foreach(int k in nums)
-            //{
-            //    Console.WriteLine("Element{0} = {1}", counter, k);
-            //    counter++;
-            //}
-
-
-            string[] friends = new string [] { "Mike", "Alli", "Luli", "Nik", "Legend" };
-            foreach(string z in friends)
+            //two dimensional array
+            int[,] array2d = new int[,]
             {
-                Console.WriteLine("Welcome to the party {0}", z);
-        
-            }
+                {
+                    1,2,3
+                },
+                {
+                    4,5,6
+                },
+                {
+                    7,8,9
+                },
+
+
+            };
+            Console.WriteLine("Central value is {0}", array2d[2, 0]);
+
+
+            string[,,] array3D = new string[,,]
+            {
+                {
+                    {"000", "001"},
+                    {"010", "011"},
+                    {"Hi There", "What's Up"}
+                },
+                {
+                    {"100", "101"},
+                    {"110", "111" },
+                    {"I'm Good", "and u?" }
+                }
+            };
+
+            string[,] array2dString = new string[3, 2]
+            {
+                {"one", "two" },
+                {"three", "four" },
+                {"five", "six" }
+            };
+
+            array2dString[1, 1] = "Chicken";
+
+            int dimensions = array2d.Rank;
+
+            int[,] array2d2 = { { 1, 2 } ,  { 3 , 4 } };
 
 
 
-
+            Console.WriteLine("The value is {0}", dimensions);
             Console.ReadKey();
-
         }
 
     }
