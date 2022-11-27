@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace ArrayListDemo
+
+namespace Debugging
 {
     class Program
     {
@@ -12,48 +9,42 @@ namespace ArrayListDemo
 
         {
 
-            //declaring an ArrayList with undefined amount of object
-            ArrayList myArrayList = new ArrayList();
+            var friends = new List<string> { "Frank", "Joe", "Michelle", "Andy", "Maria", "Carlos", "Angelica" };
+            var partyFriends = GetPartyFriends(friends, 3);
 
-            //declaring an arraylist with defined amout of object
-            ArrayList myArrayList2 = new ArrayList(100);
+            foreach (var name in partyFriends)
+                Console.WriteLine(name);
+        }
 
-            myArrayList.Add(25);
-            myArrayList.Add("hello");
-            myArrayList.Add("Mike");
-            myArrayList.Add(13.23);
-            myArrayList.Add(128);
-            myArrayList.Add(true);
-            myArrayList.Add(4);
+        public static List<string> GetPartyFriends(List<string> list, int count)
+        {
 
-
-
-            myArrayList.Remove(25);
-            myArrayList.Remove("hello");
-
-            //delete element at specific position
-
-            
-
-            Console.WriteLine(myArrayList.Count);
-
-            double sum = 0;
-
-            foreach (object obj in myArrayList)
+            if (list == null)
+                throw new ArgumentNullException("List", "This list is empty");
+            if (count > list.Count)
+                throw new ArgumentOutOfRangeException("Count", "Count cannot be greater than elements in the list.");
+            var buffer = new List<string>(list);
+            var partyFriends = new List<string>();
+            while (partyFriends.Count < count)
             {
-                if(obj is int)
+                var currentFriend = GetPartyFriend(list);
+                partyFriends.Add(currentFriend);
+                list.Remove(currentFriend);
+            }
+            return partyFriends;
+        }
+
+        public static string GetPartyFriend(List<string> List)
+        {
+            string shortestName = List[0];
+            for (var i = 0; i < List.Count; i++)
+            {
+                if (List[i].Length < shortestName.Length)
                 {
-                    sum += Convert.ToDouble(obj);
-                } else if (obj is double)
-                {
-                    sum += (double)obj;
-                } else if (obj is string)
-                {
-                    Console.WriteLine(obj);
+                    shortestName = List[i];
                 }
             }
-            Console.WriteLine(sum);
-            Console.ReadKey();
+            return shortestName;
         }
     }
 
