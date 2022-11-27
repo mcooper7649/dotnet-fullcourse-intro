@@ -1,35 +1,59 @@
 ﻿using System;
-namespace _2DArrays
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ArrayListDemo
 {
     class Program
     {
-
-        static int[,] matrix =
-           {
-                   { 1, 2, 3 },
-                   { 4, 5, 6 },
-                   { 7, 8, 9 }
-            };
-
-
         static void Main(string[] args)
+
         {
-            foreach (int item in matrix)
-            {
-                Console.Write(item + " ");
-            }
 
-            Console.WriteLine("\nThis is our 2D array printed using nesxted for loop");
+            //declaring an ArrayList with undefined amount of object
+            ArrayList myArrayList = new ArrayList();
 
-            //outer for loop
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            //declaring an arraylist with defined amout of object
+            ArrayList myArrayList2 = new ArrayList(100);
+
+            myArrayList.Add(25);
+            myArrayList.Add("hello");
+            myArrayList.Add("Mike");
+            myArrayList.Add(13.23);
+            myArrayList.Add(128);
+            myArrayList.Add(true);
+            myArrayList.Add(4);
+
+
+
+            myArrayList.Remove(25);
+            myArrayList.Remove("hello");
+
+            //delete element at specific position
+
+            
+
+            Console.WriteLine(myArrayList.Count);
+
+            double sum = 0;
+
+            foreach (object obj in myArrayList)
             {
-                //inner for loop
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                if(obj is int)
                 {
-                    Console.Write(matrix[i,j] + " ");
+                    sum += Convert.ToDouble(obj);
+                } else if (obj is double)
+                {
+                    sum += (double)obj;
+                } else if (obj is string)
+                {
+                    Console.WriteLine(obj);
                 }
             }
+            Console.WriteLine(sum);
+            Console.ReadKey();
         }
     }
 
